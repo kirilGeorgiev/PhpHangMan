@@ -1,29 +1,29 @@
 <?php
-class WordHandle{
-	private $randomWord;
+class WordHandle extends RandomWord{
+	
 	private $guessedPart;
 	private $letterGuesses; 
 	private $charInput;
+	private $word; 
 	
-	function newWord(){
-		getRandomWord();
+	function newWordHandle(){
+		$word = new RandomWord;
 		iniGuessPartString();
 	}
 	
 	function iniGuessPartString(){
-		for ($i=0; $i <strlen($this->randomWord) ; $i++) { 
+		for ($i=0; $i <strlen($this->word) ; $i++) { 
 			$this->guessedPart[$i] = '_';
 		}
 	}
-	function getRandomWord(){
-		$wordList = array("kolaa", "konn", "durvoo", "zemqq", "monitorr", "lutenicaa", "diagramaa"); 
-		$randomWord = mt_rand(0,6); 
-		$this->randomWord = $wordList[$randomWord];
-	}
+	
 	function setCharInPut($inputChar){
 		$inputChar = trim($inputChar);
 		$inputChar = substr($input_string, 0 , 1); 
 		$this->charInput = $inputChar ; 
+	}
+	function isGuessTrue(){
+		
 	}
 	
 } 
