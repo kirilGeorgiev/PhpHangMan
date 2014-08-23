@@ -1,4 +1,6 @@
 <?php
+
+/////////////////////
 class Game{
 	private $win ; 
 	private $lose;
